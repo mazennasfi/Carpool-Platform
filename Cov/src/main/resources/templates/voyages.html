@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>voyages</title>
+</head>
+<body>
+<div class="container" style="margin-top:20px" >
+<div class="panel panel-default">
+
+<a href="#" th:href="@{/conducteur}">Accueil</a>
+<div class="panel-heading"><h1><b>Mes voyages</b></h1></div>
+<a href="#" th:href="@{/voyage}">Ajouter un voyage</a>
+<div class="panel-body">
+	
+		<table class="table" colspan="2">
+		<thead>
+			<tr>
+					
+					
+					<th>prix</th>
+					
+					<th>nombre des places depart</th>
+					<th>nombre des places restantes</th>
+					<th>date du depart</th>
+					<th>date d'arrivée</th>
+					<th>max bagage par voyageur</th>
+					
+					<th>fumeur</th>
+					<th>radio</th>
+					<th>Supprimer</th>
+					<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="s:${listvoyages}">
+
+		
+		
+		
+		<td th:text="${s.prix}"></td>
+		
+		<td th:text="${s.nbrePlaceDep}"></td>
+		<td th:text="${s.nbrePlaceRest}"></td>
+		<td th:text="${s.depart}"></td>
+		<td th:text="${s.arrivee}"></td>
+		
+		<td th:text="${s.maxBagagePersonne}"></td>
+		<td th:text="${s.fumeur}? #{bool.true} : #{bool.false}">yes</td>
+		<td th:text="${s.radio}? #{bool.true} : #{bool.false}">yes</td>
+		<td><a href="#" th:href="@{/supprimerVoyage/} + ${s.id}">Delete</a></td>
+		<td><a href="#" th:href="@{/modifierVoyage/} + ${s.id}">Edit</a></td>
+
+
+
+
+
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</body>
+</html>

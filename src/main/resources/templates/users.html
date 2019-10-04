@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" style="margin-top:20px" >
+<div class="panel panel-default">
+
+
+<div class="panel-heading"><h1><b>Liste des conducteurs</b></h1></div>
+<div class="panel-body">
+
+<table class="table">
+<thead>
+<tr>
+					<th>username</th>
+					<th>Role</th>
+					<th>email</th>
+					<th>Bannir</th>
+					
+</tr>
+</thead>
+<tbody>
+<tr th:each="s:${listusers}">
+
+
+<td th:text="${s.username}"></td>
+						
+<td th:text="${s.role}"></td>
+
+<td th:text="${s.email}"></td>
+
+<td><a href="#" th:href="@{/admin/bannirClient/} + ${s.username}">Bannir</a></td>
+
+
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

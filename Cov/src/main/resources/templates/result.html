@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" style="margin-top:20px" >
+<div class="panel panel-default">
+
+
+<div class="panel-heading"><h1><b>List Of users</b></h1></div>
+<div class="panel-body">
+
+<table class="table">
+<thead>
+<tr>
+<th>cin</th><th>Nom</th><th>prenom</th>
+</tr>
+</thead>
+<tbody>
+
+
+<td th:text="${user.cin}"></td>
+<td th:text="${user.nom}"></td>
+<td th:text="${user.prenom}"></td>
+	
+
+    
+    <a href="/user">Submit another user</a>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

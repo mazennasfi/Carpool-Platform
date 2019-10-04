@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>voyages</title>
+</head>
+<body>
+<div>
+<form th:action="voyages" method="get">
+<div>
+
+<label>Chercher par la position du départ:</label>
+
+<SELECT name="depart" size="1"  >
+					<OPTION value="Ariana">Ariana
+					<OPTION value="Béja">Béja
+					<OPTION value="Ben Arous">Ben Arous
+					<OPTION value="Bizerte">Bizerte
+					<OPTION value="Gabès">Gabès
+					<OPTION value="Gafsa">Gafsa
+					<OPTION value="Jendouba">Jendouba
+					<OPTION value="Kairouan">Kairouan
+					<OPTION value="Kasserine">Kasserine
+					<OPTION value="Kasserine">Kébili
+					<OPTION value="Le Kef">Le Kef
+					<OPTION value="Mahdia">Mahdia
+					<OPTION value="La Manouba">La Manouba
+					<OPTION value="Médenine">Médenine
+					<OPTION value="Monastir">Monastir
+					<OPTION value="Nabeul">Nabeul
+					<OPTION value="Sfax">Sfax
+					<OPTION value="Sidi Bouzid">Sidi Bouzid
+					<OPTION value="Siliana">Siliana
+					<OPTION value="Sousse">Sousse
+					<OPTION value="Tataouine">Tataouine
+					<OPTION value="Tozeur">Tozeur
+					<OPTION value="Tunis">Tunis
+					<OPTION value="Zaghouan">Zaghouan
+				</SELECT>
+<button type="submit">Valider</button>
+
+</div>
+</form>
+</div>
+<div class="container" style="margin-top:20px" >
+<div class="panel panel-default">
+
+
+<div class="panel-heading"><h1><b>Mes voyages</b></h1></div>
+
+<div class="panel-body">
+	
+		<table class="table" colspan="2">
+		<thead>
+			<tr>
+					<th>Le conducteur</th>
+					<th>Le départ</th>
+					<th>L'arrivée</th>
+					
+					<th>prix</th>
+					
+					<th>nombre des places depart</th>
+					
+					<th>date du depart</th>
+					<th>date d'arrivée</th>
+					<th>max bagage par voyageur</th>
+					
+					<th>fumeur</th>
+					<th>radio</th>
+					<th>Demande de participer</th>
+					
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="s:${listvoyages}">
+
+		
+		<td th:text="${s.conducteur}"></td>
+		<td th:text="${s.dep}"></td>
+		
+		<td th:text="${s.arr}"></td>
+		<td th:text="${s.prix}"></td>
+		
+		<td th:text="${s.nbrePlaceDep}"></td>
+		
+		<td th:text="${s.depart}"></td>
+		<td th:text="${s.arrivee}"></td>
+		
+		<td th:text="${s.maxBagagePersonne}"></td>
+		<td th:text="${s.fumeur}? #{bool.true} : #{bool.false}">yes</td>
+		<td th:text="${s.radio}? #{bool.true} : #{bool.false}">yes</td>
+		<td><a href="#" th:href="@{/voyageur/ajouterDemande/} + ${s.id}">Pariticiper</a></td>
+		
+
+
+
+
+
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</body>
+</html>

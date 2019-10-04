@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th = "www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>voyageur</title>
+
+</head> 
+<body >
+<div align="center">
+<h1><B>Hello rider !</B></h1>
+</div>
+<div align="center">
+<form th:action="@{/voyageur/voyages}" method="get">
+<button type="submit" class="button" style="margin-top: 50px" >Lister les voyages</button>
+</form>
+<form th:action="@{/voyageur/demandes}" method="get">
+<button type="submit" class="button" style="margin-top: 50px" >Lister mes demandes</button>
+</form>
+
+
+</div>
+</body>
+</html>

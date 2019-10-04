@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th = "www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Hello</title>
+
+</head> 
+<body >
+<div align="center">
+<h1><B>Hello</B></h1>
+</div>
+<div align="center">
+<form th:action="@{/voyageur}" method="get">
+<button type="submit" class="button" style="margin-top: 50px" >Voyageur</button>
+</form>
+<form th:action="@{/conducteur}" method="get">
+<button type="submit" class="button" style="margin-top: 25px" > Conducteur</button>
+</form>
+<form th:action="@{/admin}" method="get">
+<button type="submit" class="button" style="margin-top: 25px" > Administrateur</button>
+
+
+</div>
+</body>
+</html>

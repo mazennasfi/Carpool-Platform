@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Entrer cord voyage</h1>
+
+    <form th:action="@{/conducteur/voyage/SaveVoyage}" method="post" th:object="${voyage}">
+      
+     	<p>Username:</p> <input type="text" th:field="*{conducteur}" /></td>
+        <p>Le départ:</p> 
+		
+				<SELECT name="gouvernorat" size="1" th:field="*{dep}" >
+					<OPTION value="Ariana">Ariana
+					<OPTION value="Béja">Béja
+					<OPTION value="Ben Arous">Ben Arous
+					<OPTION value="Bizerte">Bizerte
+					<OPTION value="Gabès">Gabès
+					<OPTION value="Gafsa">Gafsa
+					<OPTION value="Jendouba">Jendouba
+					<OPTION value="Kairouan">Kairouan
+					<OPTION value="Kasserine">Kasserine
+					<OPTION value="Kasserine">Kébili
+					<OPTION value="Le Kef">Le Kef
+					<OPTION value="Mahdia">Mahdia
+					<OPTION value="La Manouba">La Manouba
+					<OPTION value="Médenine">Médenine
+					<OPTION value="Monastir">Monastir
+					<OPTION value="Nabeul">Nabeul
+					<OPTION value="Sfax">Sfax
+					<OPTION value="Sidi Bouzid">Sidi Bouzid
+					<OPTION value="Siliana">Siliana
+					<OPTION value="Sousse">Sousse
+					<OPTION value="Tataouine">Tataouine
+					<OPTION value="Tozeur">Tozeur
+					<OPTION value="Tunis">Tunis
+					<OPTION value="Zaghouan">Zaghouan
+				</SELECT>
+			<p>L'arrivée:</p> 
+		
+				<SELECT name="gouvernorat" size="1" th:field="*{arr}" >
+					<OPTION value="Ariana">Ariana
+					<OPTION value="Béja">Béja
+					<OPTION value="Ben Arous">Ben Arous
+					<OPTION value="Bizerte">Bizerte
+					<OPTION value="Gabès">Gabès
+					<OPTION value="Gafsa">Gafsa
+					<OPTION value="Jendouba">Jendouba
+					<OPTION value="Kairouan">Kairouan
+					<OPTION value="Kasserine">Kasserine
+					<OPTION value="Kasserine">Kébili
+					<OPTION value="Le Kef">Le Kef
+					<OPTION value="Mahdia">Mahdia
+					<OPTION value="La Manouba">La Manouba
+					<OPTION value="Médenine">Médenine
+					<OPTION value="Monastir">Monastir
+					<OPTION value="Nabeul">Nabeul
+					<OPTION value="Sfax">Sfax
+					<OPTION value="Sidi Bouzid">Sidi Bouzid
+					<OPTION value="Siliana">Siliana
+					<OPTION value="Sousse">Sousse
+					<OPTION value="Tataouine">Tataouine
+					<OPTION value="Tozeur">Tozeur
+					<OPTION value="Tunis">Tunis
+					<OPTION value="Zaghouan">Zaghouan
+				</SELECT>
+
+        <p>prix</p><td><input type="text" th:field="*{prix}" /></td>
+		<p>nbreplacedep</p><td><input type="text" th:field="*{nbrePlaceDep}" /></td>
+        
+        <p>La date de depart:</p> <input type="datetime-local" th:field="*{depart}" />
+    	<p>La date d'arrivée:</p> <input type="datetime-local" th:field="*{arrivee}" />
+    	<p>fumeur:</p> 
+        <div>
+  		<label th:for="${#ids.next('fumeur')}"  >Fumeur</label>
+  		<input type="checkbox" th:field="*{fumeur}" value="fumeur" />
+		</div> 
+		<p>radio:</p> 
+        <div>
+  		<label th:for="${#ids.next('radio')}" >Radio</label>
+  		<input type="checkbox" th:field="*{radio}" value="radio"/>
+		</div> 
+         
+        
+        <p>maxBagagePersonne:</p> <input type="number" th:field="*{maxBagagePersonne}" />
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        
+       
+        
+       
+    </form>
+</body>
+</html>

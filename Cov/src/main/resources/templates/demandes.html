@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="#" th:href="@{/conducteur}">Accueil</a>
+
+<table class="table">
+<thead>
+<tr>
+<th>etat</th><th>accepter</th><th>refuser</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="s:${listdemandes}">
+
+<td th:text="${s.etat}"></td>
+<td> <a href="#" th:href="@{/accepterDemande/} + ${s.id}">accepter</a></td>
+<td> <a href="#" th:href="@{/refuserDemande/} + ${s.id}">refuser</a></td>
+
+
+
+
+
+
+</tr>
+</tbody>
+</table>
+</body>
+</html>

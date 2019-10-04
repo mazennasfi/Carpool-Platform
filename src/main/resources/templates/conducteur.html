@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th = "www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>conducteur</title>
+
+</head> 
+<body >
+<div align="center">
+<h1><B>Hello driver !</B></h1>
+</div>
+<div align="center">
+
+<form th:action="@{/conducteur/demandes}" method="get">
+<button type="submit" class="button" style="margin-top: 50px" >Liste des demandes</button>
+</form>
+<form th:action="@{/conducteur/voyage/}" method="get">
+<button type="submit" class="button" style="margin-top: 50px" >Ajouter un voyages</button>
+</form>
+<form th:action="@{/conducteur/voyages}" method="get">
+<button type="submit" class="button" style="margin-top: 25px" >Mes voyages</button>
+</form>
+<form th:action="@{/conducteur/voyageurs}" method="get">
+<button type="submit" class="button" style="margin-top: 25px" >Liste des voyageurs</button>
+</form>
+
+</div>
+</body>
+</html>

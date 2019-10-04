@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Entrer cord voyage</h1>
+
+    <form th:action="@{SaveVoyage}" method="post" th:object="${voyage}">
+    	
+       
+    	
+        <p>prix:</p> <input type="number" th:field="*{prix}" />
+        <p>trajet:</p> <p>depart</p><br></br>
+        
+        
+                    
+                
+ <table>
+           <thead>
+                <tr>
+                    <th> ville</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="s:*{trajet}">
+
+		
+		<td><input type="text" th:field="${s.prix}" /></td>
+		</tr>
+		
+            </tbody>
+            </table>
+				
+				<p>arrivée</p><br></br>
+				
+				
+        
+        <p>nbrePlaceDep:</p> <input type="text" th:field="*{nbrePlaceDep}" />
+        <p>nbrePlacearr:</p> <input type="text" th:field="*{nbrePlaceRest}" />
+        <p>depart:</p> <input type="datetime-local" th:field="*{depart}" />
+    	<p>arrivee:</p> <input type="datetime-local" th:field="*{arrivee}" />
+    	<p>fumeur:</p> 
+        <div>
+  		<label th:for="${#ids.next('fumeur')}"  >Fumeur</label>
+  		<input type="checkbox" th:field="*{fumeur}" />
+		</div> 
+		<p>radio:</p> 
+        <div>
+  		<label th:for="${#ids.next('radio')}" >Radio</label>
+  		<input type="checkbox" th:field="*{radio}" />
+		</div> 
+         
+        
+        <p>maxBagagePersonne:</p> <input type="number" th:field="*{maxBagagePersonne}" />
+        
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
